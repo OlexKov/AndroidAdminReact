@@ -2,8 +2,8 @@ import { Avatar, Divider } from "antd"
 import Sider from "antd/es/layout/Sider"
 import { SideBarMenu } from "../menu"
 import { useState } from "react";
-import icon from '../../../images/noimage.jpg'
 import './Sidebar.css'
+import { Images } from "../../../constants/images";
 
 export const SideBar: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
@@ -11,7 +11,7 @@ export const SideBar: React.FC = () => {
     <Sider width={288} theme='dark' collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
       <div className="flex flex-col">
         <div className={` flex p-3 gap-5 ${collapsed ? ' justify-center' : ''} items-center overflow-hidden user-container`}>
-          <Avatar className=" flex-shrink-0" size={collapsed ? 46 : 84} src={icon} />
+          <Avatar className=" flex-shrink-0" size={collapsed ? 46 : 84} src={Images.noImage} />
           {!collapsed &&
             <div className="flex flex-col gap-1">
               <span className='flex-shrink-0 font-bold text-lg text-nowrap'>Ivan Sapun</span>
