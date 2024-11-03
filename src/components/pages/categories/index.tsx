@@ -9,6 +9,7 @@ export const CategoryTable: React.FC = () => {
         <div className="m-6 flex-grow  text-center ">
             <PageHeader
                 title="Категорії"
+                tooltipMessage="Додати категорію"
                 icon={<ProfileOutlined className="text-2xl"  />}
                 buttonIcon={<PlusOutlined className="text-white text-2xl" />}
                 onClick={addCategory} />

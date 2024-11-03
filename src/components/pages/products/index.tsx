@@ -9,6 +9,7 @@ export const ProductTable: React.FC = () => {
         <div className=" m-6 flex-grow  text-center ">
             <PageHeader
                 title="Продукти"
+                tooltipMessage="Додати продукт"
                 icon={<SkinOutlined className="text-2xl" />}
                 buttonIcon={<PlusOutlined className="text-white text-2xl" />}
                 onClick={addProduct} />

@@ -1,15 +1,17 @@
 import { ReactNode } from "react"
 import './PageHeader.css'
+import { Tooltip } from "antd";
 
 interface PageHeaderProps {
     title?: string,
     icon?: ReactNode,
     onClick?: Function,
     buttonIcon?: ReactNode,
+    tooltipMessage?:string
 }
-export const PageHeader: React.FC<PageHeaderProps> = ({ title, icon, onClick ,buttonIcon}) => {
-    const onButtonClick = ()=>{
-        if(onClick){
+export const PageHeader: React.FC<PageHeaderProps> = ({ title, icon, onClick, buttonIcon,tooltipMessage }) => {
+    const onButtonClick = () => {
+        if (onClick) {
             onClick();
         }
     }
@@ -18,10 +20,15 @@ export const PageHeader: React.FC<PageHeaderProps> = ({ title, icon, onClick ,bu
             {icon}
             <span className="text-xl">{title}</span>
             {onClick &&
-                <div style={{right:'10%'}} 
-                className="h-[45px] w-[45px] flex items-center justify-center cursor-pointer rounded-full bg-green-500 absolute top-12 "
-                onClick={onButtonClick}>
-                     {buttonIcon}
-                </div>}
+                <Tooltip  
+                color="geekblue" 
+                title={tooltipMessage}>
+                    <div style={{ right: '10%' }}
+                        className="h-[45px] w-[45px] flex items-center justify-center cursor-pointer rounded-full bg-green-500 absolute top-12 "
+                        onClick={onButtonClick}>
+                        {buttonIcon}
+                    </div>
+                </Tooltip>}
+
         </div>)
 }

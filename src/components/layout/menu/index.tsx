@@ -45,7 +45,6 @@ export const SideBarMenu: React.FC = () => {
                 mode="inline"
                 items={items}
                 selectedKeys={[current]}
-                className=" w-72"
             />
         </>)
 }
