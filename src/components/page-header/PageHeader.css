@@ -1,0 +1,5 @@
+.ph-bg {
+    background-color: rgb(42, 80, 121);
+    background-image: url('../../images/pattern_h.png');
+    background-attachment: fixed;
+}
