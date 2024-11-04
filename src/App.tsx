@@ -18,7 +18,7 @@ const App: React.FC = () => {
           <Error
             status="404"
             title="404"
-            subTitle="Вибачте, сторінкт на яку ви намагаєтесь перейти не існує."
+            subTitle="Вибачте, сторінка на яку ви намагаєтесь перейти не існує."
           />} />
 
         <Route path="forbiden" element={
