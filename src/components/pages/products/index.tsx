@@ -36,7 +36,7 @@ const columns = [
         key: 'category',
         render: (name: string, record: TableCategoryData) =>
             <div className="flex gap-4 items-center">
-                <Avatar size={64} src={record.categoryImage ? APP_ENV.IMAGES_200_URL + record.categoryImage : Images.noImage} />
+                <Avatar size={48} src={record.categoryImage ? APP_ENV.IMAGES_200_URL + record.categoryImage : Images.noImage} />
                 <span>{name}</span>
             </div>
     },
@@ -44,7 +44,9 @@ const columns = [
         title: 'Ціна',
         dataIndex: 'price',
         key: 'price',
-        width: '100px'
+        width: '120px',
+        render: (price: string) =><span>{price} грн.</span>
+            
     },
 
 ];

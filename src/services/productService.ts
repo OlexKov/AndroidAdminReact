@@ -21,16 +21,14 @@ export const productApi = createApi({
                     method: 'GET',
                 }
             },
-            keepUnusedDataFor: 0,
         }),
         getProductById: builder.query<IProduct, string>({
             query: (id:string) => {
                 return {
-                    url: `/${id}`,
+                    url: `${id}`,
                     method: 'GET',
                 }
             },
-            keepUnusedDataFor: 0,
         }),
         addProduct: builder.mutation<IProduct, IProductCreationModel>({
             query: (productForm) => {
@@ -39,9 +37,9 @@ export const productApi = createApi({
                 url: '',
                 method: 'POST',
                 body: formData,
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
+                // headers: {
+                //     'Content-Type': 'multipart/form-data'
+                // }
             }},
         }),
         updateProduct: builder.mutation<IProduct, IProductEditModel>({
@@ -60,7 +58,7 @@ export const productApi = createApi({
 
         deleteProduct: builder.mutation<void, string>({
             query: (id) => ({
-                url: `/${id}`,
+                url: `${id}`,
                 method: 'DELETE',
             }),
         }),

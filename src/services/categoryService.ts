@@ -18,7 +18,7 @@ export const categoryApi = createApi({
                     method: 'GET',
                 }
             },
-            keepUnusedDataFor: 0,
+           // keepUnusedDataFor: 0,
         }),
         getCategoryById: builder.query<ICategory, string>({
             query: (id:string) => {
@@ -27,7 +27,7 @@ export const categoryApi = createApi({
                     method: 'GET',
                 }
             },
-            keepUnusedDataFor: 0,
+           // keepUnusedDataFor: 0,
         }),
         addCategory: builder.mutation<ICategory, ICategoryCreationModel>({
             query: (categoryForm) => {

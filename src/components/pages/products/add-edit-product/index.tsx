@@ -29,7 +29,6 @@ export const AddEditProduct: React.FC = () => {
 
     const onFinish = async (productData: IProductCreationModel) => {
         setPublishing(true);
-        console.log(productData)
         if (!product) {
             try {
                 await addProduct(productData).unwrap();
