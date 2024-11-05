@@ -19,18 +19,18 @@ export const SideBarMenu: React.FC = () => {
     }, [location, current]);
 
     const items: MenuItem[] = [
-
         {
             key: "/",
-            icon: <ProfileOutlined style={{fontSize:20}}/> ,
-            label: <Link className='link' to="/"><span className='text-lg font-medium'>Категорії</span></Link>,
-        },
-        {
-            key: "/products",
             icon: <SkinOutlined style={{fontSize:20}}/>,
-            label: <Link className='link' to="/products"><span className='text-lg font-medium'>Продукти</span></Link>,
+            label: <Link className='link' to="/"><span className='text-lg font-medium'>Продукти</span></Link>,
 
         },
+        {
+            key: "/categories",
+            icon: <ProfileOutlined style={{fontSize:20}}/> ,
+            label: <Link className='link' to="/categories"><span className='text-lg font-medium'>Категорії</span></Link>,
+        },
+        
         {
             key: "/settings",
             icon: <SettingOutlined style={{fontSize:20}}/>,
