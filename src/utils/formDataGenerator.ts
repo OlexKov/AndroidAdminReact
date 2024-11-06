@@ -19,7 +19,7 @@ export const generateEditProductFormData = (productModel: IProductEditModel): Fo
     const formData = new FormData();
     if (productModel.newImages && productModel.newImages.length > 0) {
         productModel.newImages.forEach(file => {
-            formData.append('NewImages',  file.originFileObj as Blob);
+            formData.append('newImages[]',  file.originFileObj as Blob);
         })
     }
     if (productModel.removeImages && productModel.removeImages.length > 0) {
