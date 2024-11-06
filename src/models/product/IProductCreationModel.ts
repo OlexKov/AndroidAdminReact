@@ -1,8 +1,9 @@
 import { UploadFile } from "antd";
 
 export interface IProductCreationModel{
+    id:number
     name:string,
     price:number,
     categoryId:number,
-    images?:UploadFile[],
+    files:UploadFile[],
 }

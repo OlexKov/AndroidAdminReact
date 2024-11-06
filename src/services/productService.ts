@@ -4,8 +4,8 @@ import { createApi } from '@reduxjs/toolkit/query/react'
 import { IProduct } from "../models/product/IProduct"
 import { IProductCreationModel } from "../models/product/IProductCreationModel"
 import { createBaseQuery } from "../utils/createBaseQuery"
-import { generateCreateProductFormData, generateEditProductFormData } from '../utils/formDataGenerator'
-import { IProductEditModel } from '../models/product/IProductditModel'
+import { generateCreateProductFormData} from '../utils/formDataGenerator'
+
 
 
 export const productApi = createApi({
@@ -37,22 +37,15 @@ export const productApi = createApi({
                 url: '',
                 method: 'POST',
                 body: formData,
-                // headers: {
-                //     'Content-Type': 'multipart/form-data'
-                // }
             }},
         }),
-        updateProduct: builder.mutation<IProduct, IProductEditModel>({
+        updateProduct: builder.mutation<IProduct, IProductCreationModel>({
             query: (productForm) => {
-                const formData = generateEditProductFormData(productForm)
+                const formData = generateCreateProductFormData(productForm)
                 return {
                 url: '',
                 method: 'PUT',
                 body: formData,
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-
             }},
         }),
 
