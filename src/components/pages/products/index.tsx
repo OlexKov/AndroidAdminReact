@@ -19,11 +19,15 @@ const columns = [
         dataIndex: 'image',
         key: 'image',
         render: (_text: string, record: TableCategoryData) =>
-            <Image.PreviewGroup
-                items={record.images.map(x => APP_ENV.IMAGES_800_URL + x)}>
-                <Image width={100} src={record.images[0] ? APP_ENV.IMAGES_200_URL + record.images[0] : Images.noImage} />,
-            </Image.PreviewGroup>,
-        width: '120px'
+            <div className="flex  items-center">
+                <Image.PreviewGroup
+                    items={record.images.map(x => APP_ENV.IMAGES_800_URL + x)}>
+                    <Image className="self-center" width={100} src={record.images[0] ? APP_ENV.IMAGES_200_URL + record.images[0] : Images.noImage} />,
+                </Image.PreviewGroup>
+            </div>
+        ,
+        width: '120px',
+
     },
     {
         title: 'Назва',
@@ -45,8 +49,8 @@ const columns = [
         dataIndex: 'price',
         key: 'price',
         width: '120px',
-        render: (price: string) =><span>{price} грн.</span>
-            
+        render: (price: string) => <span>{price} грн.</span>
+
     },
 
 ];
@@ -61,7 +65,7 @@ interface TableCategoryData {
 }
 
 export const ProductTable: React.FC = () => {
-    const { data: products} = useGetAllProductsQuery();
+    const { data: products } = useGetAllProductsQuery();
     const { data: categories } = useGetAllCategoriesQuery();
     const navigate = useNavigate();
 
