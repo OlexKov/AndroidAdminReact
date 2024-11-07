@@ -20,7 +20,7 @@ export const DeleteDialog: React.FC<Props> = ({ title, description, onSubmit, is
                 <Button key="back" onClick={onCancel}>
                     Скасувати
                 </Button>,
-                <Button key="submit" type="primary" onClick={onSubmit}>
+                <Button key="submit" color="danger" variant="solid" onClick={onSubmit}>
                     Delete
                 </Button>
             ]}
